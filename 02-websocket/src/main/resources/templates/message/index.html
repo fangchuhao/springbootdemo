@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="jquery.js"></script>
-    <script src="sockjs.js"></script>
-    <script src="stomp.js"></script>
+    <script src="../jquery.js"></script>
+    <script src="../sockjs.js"></script>
+    <script src="../stomp.js"></script>
 </head>
 <body>
 聊天室
@@ -24,17 +24,29 @@
 </select>
 <input type="button" id="send" value="发送"/>
 以下是我接收到的消息：<br/>
-<div id="getMessage"></div>
+<div id="getMessage">
+
+</div>
 </body>
 <script>
+    var id='${id}'
     var sock=new SockJS("http://localhost:7080/socket")
     console.log(sock)
     var stompClient=Stomp.over(sock)
     stompClient.connect({},function (data) {
-            stompClient.subscribe("/server/sendMessageByServer",function (response) {
-                console.log(response.body)
-                $("#msg").html(response.body)
+            stompClient.subscribe("/user/"+id+"/message/get",function (response) {
+                var message=JSON.parse(response.body)
+                $('#getMessage').append('<div class="message"><span>发送人：'+message.fromUserId+'</span><span>消息：'+message.content+'</span></div>')
             })
+    })
+    $('#send').click(function () {
+        var content= $('#content').val()
+        var userId=$('#userId').val()
+        stompClient.send('/message',{},JSON.stringify({
+            content: content,
+            toUserId: userId,
+            fromUserId: id
+        }))
     })
 </script>
 </html>
