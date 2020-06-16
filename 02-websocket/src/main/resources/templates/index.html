@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script src="sockjs.js"></script>
+    <script src="stomp.js"></script>
+</head>
+<body>
+服务器定时给所有用户推送信息：
+<div id="msg"></div>
+</body>
+<script>
+    var sock=new SockJS("http://localhost:7080/socket")
+    console.log(sock)
+    var stompClient=Stomp.over(sock)
+    stompClient.connect({},function (data) {
+            stompClient.subscribe("/server/sendMessageByServer",function (response) {
+                console.log(response.body)
+                $("#msg").html(response.body)
+            })
+    })
+</script>
+</html>

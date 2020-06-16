@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script src="sockjs.js"></script>
+    <script src="stomp.js"></script>
+</head>
+<body>
+聊天室
+当前用户id是：${id}
+<div id="msg"></div>
+<textarea id="content"></textarea></br>
+接收人的id是：
+<select id="userId">
+    <option>全部</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+</select>
+<input type="button" id="send" value="发送"/>
+以下是我接收到的消息：<br/>
+<div id="getMessage"></div>
+</body>
+<script>
+    var sock=new SockJS("http://localhost:7080/socket")
+    console.log(sock)
+    var stompClient=Stomp.over(sock)
+    stompClient.connect({},function (data) {
+            stompClient.subscribe("/server/sendMessageByServer",function (response) {
+                console.log(response.body)
+                $("#msg").html(response.body)
+            })
+    })
+</script>
+</html>
