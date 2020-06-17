@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/02-websocket/02-websocket.iml" filepath="$PROJECT_DIR$/02-websocket/02-websocket.iml" />
       <module fileurl="file://$PROJECT_DIR$/03-servlet/03-servlet.iml" filepath="$PROJECT_DIR$/03-servlet/03-servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/04-springboot-fileupload/04-springboot-fileupload.iml" filepath="$PROJECT_DIR$/04-springboot-fileupload/04-springboot-fileupload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05-springboot-jsp/05-springboot-jsp.iml" filepath="$PROJECT_DIR$/05-springboot-jsp/05-springboot-jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06-springboot-freemarker/06-springboot-freemarker.iml" filepath="$PROJECT_DIR$/06-springboot-freemarker/06-springboot-freemarker.iml" />
     </modules>
   </component>
 </project>

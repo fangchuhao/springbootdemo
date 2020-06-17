@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/03-servlet/pom.xml" />
         <option value="$PROJECT_DIR$/04-springboot-fileupload/pom.xml" />
+        <option value="$PROJECT_DIR$/05-springboot-jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/06-springboot-freemarker/pom.xml" />
       </list>
     </option>
   </component>
