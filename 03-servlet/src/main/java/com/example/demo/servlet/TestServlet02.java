@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 整合Servlet方式一
+ * 整合Servlet方式二
  */
-@WebServlet(name = "TestServlet01",urlPatterns = "/test")
-public class TestServlet01 extends HttpServlet{
+public class TestServlet02 extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //resp.setCharacterEncoding("utf-8");

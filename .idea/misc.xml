@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/03-servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/04-springboot-fileupload/pom.xml" />
       </list>
     </option>
   </component>

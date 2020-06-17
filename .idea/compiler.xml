@@ -9,12 +9,14 @@
         <module name="01-demo-first-try" />
         <module name="02-websocket" />
         <module name="03-servlet" />
+        <module name="04-springboot-fileupload" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="01-demo-first-try" target="1.8" />
       <module name="02-websocket" target="1.8" />
       <module name="03-servlet" target="1.8" />
+      <module name="04-springboot-fileupload" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
